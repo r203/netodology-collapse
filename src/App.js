@@ -1,23 +1,14 @@
-import logo from './logo.svg';
+// import { useState } from 'react';
 import './App.css';
+import Collapse from './components/Collapse';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Collapse title='collapsedLabel' ariaControls={'collapseExample1'} collapsedLabel/>
+      <Collapse title='expandedLabel' ariaControls={'collapseExample2'} expandedLabel/>
+
     </div>
   );
 }
