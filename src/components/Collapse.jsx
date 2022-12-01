@@ -1,18 +1,24 @@
-const Collapse = ({title = '', ariaControls, collapsedLabel, expandedLabel}) => {
+import { useState } from 'react';
+
+const Collapse = ({
+  collapsedLabel ='Развернуть', 
+  expandedLabel='Свернуть'
+}) => {
+
+  const [collapsed, setCollapsed] = useState(true);
+  const toggleCollapse = () => {setCollapsed(!collapsed)}
 
   return (
-    <>
-      <p>
-        <a className="btn btn-primary" data-bs-toggle="collapse" href={`#${ariaControls}`} role="button" aria-expanded={expandedLabel ? "true" : "false"} aria-controls={ariaControls}>
-          {title}
-        </a>
-      </p>
-      <div className={`collapse ${expandedLabel ? "show" : ""}`} id={ariaControls}>
-        <div className="card card-body">
-          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-        </div>
+    <div className='collapse'>
+      <div className={`collapse__content ${collapsed ? 'hidden' : ''}`}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae pariatur ducimus ea debitis deserunt maiores, blanditiis explicabo? Quia est natus aperiam accusantium expedita placeat debitis maxime, voluptate commodi modi vero?
       </div>
-    </>
+      <button 
+        onClick={toggleCollapse}
+        className="collapse__btn">
+          {collapsed ? collapsedLabel : expandedLabel}
+      </button>
+    </div>
   )
 }
 

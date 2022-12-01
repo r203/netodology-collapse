@@ -3,11 +3,15 @@ import './App.css';
 import Collapse from './components/Collapse';
 
 function App() {
+  let collapsedLabel = 'Развернуть';
+  let expandedLabel = 'Свернуть';
 
   return (
     <div className="App">
-      <Collapse title='collapsedLabel' ariaControls={'collapseExample1'} collapsedLabel/>
-      <Collapse title='expandedLabel' ariaControls={'collapseExample2'} expandedLabel/>
+      <Collapse 
+        collapsedLabel={collapsedLabel}
+        expandedLabel={expandedLabel}
+        />
 
     </div>
   );
